@@ -141,14 +141,24 @@ export default function VocabularyExplorerPage() {
         </div>
       ) : view === "table" ? (
         <div className="flex flex-col divide-y divide-border rounded-lg border border-border">
-          {pageItems.map((v) => (
-            <VocabularyRow key={v.id} vocab={v} userVocab={userVocabulary[v.id]} />
+          {pageItems.map((v, i) => (
+            <VocabularyRow
+              key={v.id}
+              vocab={v}
+              userVocab={userVocabulary[v.id]}
+              index={(page - 1) * PAGE_SIZE + i + 1}
+            />
           ))}
         </div>
       ) : (
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {pageItems.map((v) => (
-            <VocabularyCard key={v.id} vocab={v} userVocab={userVocabulary[v.id]} />
+          {pageItems.map((v, i) => (
+            <VocabularyCard
+              key={v.id}
+              vocab={v}
+              userVocab={userVocabulary[v.id]}
+              index={(page - 1) * PAGE_SIZE + i + 1}
+            />
           ))}
         </div>
       )}

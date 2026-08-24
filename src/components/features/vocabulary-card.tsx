@@ -9,15 +9,19 @@ import { cn } from "@/lib/utils";
 interface VocabularyCardProps {
   vocab: VocabularyEntry;
   userVocab?: UserVocabulary;
+  index?: number;
 }
 
-export function VocabularyCard({ vocab, userVocab }: VocabularyCardProps) {
+export function VocabularyCard({ vocab, userVocab, index }: VocabularyCardProps) {
   const overall = userVocab?.overallMastery ?? 0;
   return (
     <Link href={`/vocabulary/${vocab.id}`}>
       <Card className="h-full gap-3 transition-colors hover:border-accent/50">
         <div className="flex items-start justify-between gap-2">
           <div>
+            {index !== undefined && (
+              <p className="text-xs tabular-nums text-muted-foreground">No. {index}</p>
+            )}
             <p className="font-jp text-2xl font-medium leading-tight">{vocab.word}</p>
             <p className="text-sm text-muted-foreground">{vocab.reading}</p>
           </div>
