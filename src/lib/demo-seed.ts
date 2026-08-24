@@ -15,7 +15,7 @@ function daysAgoIso(days: number): string {
 /**
  * Deterministic demo progress so a brand-new session already looks like a
  * learner mid-journey (per spec: dashboard must be compelling immediately),
- * while staying honest about the actual size of the demo corpus (150 words)
+ * while staying honest about the actual size of the demo corpus (200 words)
  * rather than faking a 12,000-word history.
  */
 export function buildSeedUserVocabulary(): Record<string, UserVocabulary> {
