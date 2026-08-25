@@ -70,14 +70,15 @@ this build.
 
 ## Demo data, honestly
 
-The seeded corpus contains **1100 real, hand-curated N1 words** — genuine readings, natural example
+The seeded corpus contains **1600 real, hand-curated N1 words** — genuine readings, natural example
 sentences, real collocations, and cross-referenced synonym/antonym/confusing-word clusters (e.g.
 促進↔推進, 懸念/危惧/憂慮, 対応/適応/適用, 遵守↔違反, 縮小↔拡充, 検証↔立証, 曖昧↔明瞭, 屈する↔抗う,
 隆盛↔衰退, 昇格↔降格, 依存↔自立, 頭角/秀でる/卓越/傑出/逸材, 露見↔隠蔽, 厳格↔寛容/寛大, 熟練↔未熟,
 寡黙↔饒舌, 信頼↔猜疑, 巧妙↔拙劣, 進化↔退化, 少子化↔高齢化, 過疎↔過密, 貧困↔富裕, 孤立↔連帯,
 結束↔分裂, 本質↔表層, 虚構↔実在, 与党↔野党, 参入↔撤退, 高騰↔暴落, 虚弱↔頑健, 陰湿↔温厚, 杜撰↔几帳面,
 優位↔劣勢, 濃厚↔淡白, 楽天的↔悲観的, 軽率↔慎重, 剛胆↔臆病, 落選↔当選, 利上げ↔利下げ, 離陸↔着陸,
-円安↔円高, 含み損↔含み益, 進級↔留年, 害虫↔益虫) — not generated filler.
+円安↔円高, 含み損↔含み益, 進級↔留年, 害虫↔益虫, 独裁的↔民主的, 鎖国↔開国, 劣等感↔優越感,
+インフレーション↔デフレーション) — not generated filler.
 The UI's corpus-size badges reflect that actual number; nowhere does the app claim this is the
 official JLPT N1 word list or a complete N1 corpus. `src/data/vocabulary.ts` also exports an
 aspirational `VOCABULARY_CORPUS_TARGET` constant for future content growth, which is never
@@ -85,7 +86,7 @@ conflated with the current size.
 
 Demo learner progress (`src/lib/demo-seed.ts`) is deterministic: 15 words seeded near "Mastered,"
 14 "Mature" (some intentionally due for review right now), 10 "Young/learning," and the
-remaining 1061 left completely unseen (plenty of headroom for the Learn flow) — plus a 42-day
+remaining 1561 left completely unseen (plenty of headroom for the Learn flow) — plus a 42-day
 activity streak ending today.
 
 ## Tech stack
@@ -113,7 +114,7 @@ src/
     layout/       Shell, sidebar, header, theme, auth gate
   types/          Domain types (vocabulary, mastery, srs, quiz, user, statistics)
   schemas/        Zod validation schemas
-  data/           The 1100-word vocabulary corpus + topic labels
+  data/           The 1600-word vocabulary corpus + topic labels
   services/       Pure, unit-tested business logic (mastery, SRS, quiz, scoring, weakness, streak)
   repositories/   LearningRepository interface + demo (Zustand) and Supabase implementations
   ai/             Provider-agnostic AiService interface + deterministic mock provider
