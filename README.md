@@ -70,11 +70,12 @@ this build.
 
 ## Demo data, honestly
 
-The seeded corpus contains **400 real, hand-curated N1 words** — genuine readings, natural example
+The seeded corpus contains **500 real, hand-curated N1 words** — genuine readings, natural example
 sentences, real collocations, and cross-referenced synonym/antonym/confusing-word clusters (e.g.
 促進↔推進, 懸念/危惧/憂慮, 対応/適応/適用, 遵守↔違反, 縮小↔拡充, 検証↔立証, 曖昧↔明瞭, 屈する↔抗う,
 隆盛↔衰退, 昇格↔降格, 依存↔自立, 頭角/秀でる/卓越/傑出/逸材, 露見↔隠蔽, 厳格↔寛容/寛大, 熟練↔未熟,
-寡黙↔饒舌, 信頼↔猜疑) — not generated filler.
+寡黙↔饒舌, 信頼↔猜疑, 巧妙↔拙劣, 進化↔退化, 少子化↔高齢化, 過疎↔過密, 貧困↔富裕, 孤立↔連帯,
+結束↔分裂, 本質↔表層, 虚構↔実在) — not generated filler.
 The UI's corpus-size badges reflect that actual number; nowhere does the app claim this is the
 official JLPT N1 word list or a complete N1 corpus. `src/data/vocabulary.ts` also exports an
 aspirational `VOCABULARY_CORPUS_TARGET` constant for future content growth, which is never
@@ -82,7 +83,7 @@ conflated with the current size.
 
 Demo learner progress (`src/lib/demo-seed.ts`) is deterministic: 15 words seeded near "Mastered,"
 14 "Mature" (some intentionally due for review right now), 10 "Young/learning," and the
-remaining 361 left completely unseen (plenty of headroom for the Learn flow) — plus a 42-day
+remaining 461 left completely unseen (plenty of headroom for the Learn flow) — plus a 42-day
 activity streak ending today.
 
 ## Tech stack
@@ -110,7 +111,7 @@ src/
     layout/       Shell, sidebar, header, theme, auth gate
   types/          Domain types (vocabulary, mastery, srs, quiz, user, statistics)
   schemas/        Zod validation schemas
-  data/           The 400-word vocabulary corpus + topic labels
+  data/           The 500-word vocabulary corpus + topic labels
   services/       Pure, unit-tested business logic (mastery, SRS, quiz, scoring, weakness, streak)
   repositories/   LearningRepository interface + demo (Zustand) and Supabase implementations
   ai/             Provider-agnostic AiService interface + deterministic mock provider
